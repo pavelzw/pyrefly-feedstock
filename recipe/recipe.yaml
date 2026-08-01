@@ -1,6 +1,6 @@
 context:
   name: pyrefly
-  version: "1.1.1"
+  version: "1.2.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/facebook/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-  sha256: b0de811112349a53422532ab393bdd52c7a3a97720c5bc498c1a314e6b2406bd
+  sha256: 39c3d391da0aa85eb7d0149fc57e860495f50e431f4911547f21906a35ab33bd
 
 build:
   script:
@@ -27,7 +27,7 @@ build:
         else:
           - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
       - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
-  number: 1
+  number: 0
 
 requirements:
   build:
